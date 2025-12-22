@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-blue: #0B2341;
+    --primary-accent: #0ea5e9;
+    --secondary-accent: #8b5cf6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-saas-bg text-gray-300 font-sans selection:bg-secondary-accent selection:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-wide text-white;
+  }
+
+  /* Custom Scrollbar for Dark Theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-saas-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-primary-accent transition-colors;
+  }
+}
+
+@layer components {
+
+  /* SaaS Card Style */
+  .saas-card {
+    @apply bg-saas-surface/50 border border-white/10 rounded-2xl shadow-saas-card backdrop-blur-md transition-all duration-300;
+  }
+
+  .saas-card:hover {
+    @apply border-primary-accent/40 shadow-saas-hover -translate-y-1 bg-saas-surface/70;
+  }
+
+  /* Glass Panel Utility */
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+
+  /* SaaS Gradient Text */
+  .text-gradient-tech {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-primary-accent to-secondary-accent animate-pulse-glow;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  }
+
+  /* SaaS Button Styles */
+  .btn-saas {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-display font-semibold transition-all duration-300 rounded-lg shadow-lg tracking-wide uppercase text-sm;
+  }
+
+  .btn-saas-primary {
+    @apply bg-gradient-glow text-white shadow-saas-glow hover:shadow-saas-hover hover:scale-[1.02] hover:brightness-110;
+  }
+
+  .btn-saas-outline {
+    @apply bg-transparent text-white border border-white/20 hover:border-primary-accent hover:text-primary-accent hover:bg-white/5 hover:shadow-saas-glow;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40' stroke='%2338bdf8' stroke-width='0.5' stroke-opacity='0.1' fill='none'/%3E%3C/svg%3E");
+  }
+}
