@@ -70,18 +70,11 @@ const Navbar = () => {
                             onClick={() => scrollToSection('home')}
                             className="flex items-center gap-2 group relative"
                         >
-                            <div className="absolute inset-0 bg-brand-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="relative z-10 flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary shadow-lg">
-                                <Zap className="w-6 h-6 text-white fill-current" />
-                            </div>
-                            <div className="flex flex-col items-start relative z-10">
-                                <span className="text-xl font-display font-bold text-white tracking-tight leading-none">
-                                    JET<span className="text-brand-accent">POWER</span>
-                                </span>
-                                <span className="text-[0.6rem] text-text-muted uppercase tracking-[0.2em] leading-none mt-1">
-                                    Future Energy
-                                </span>
-                            </div>
+                            <img
+                                src="/src/assets/logo1.png"
+                                alt="JetPower Logo"
+                                className="h-12 w-auto object-contain"
+                            />
                         </motion.button>
 
                         {/* Desktop Navigation */}
@@ -126,10 +119,10 @@ const Navbar = () => {
                         </button>
                     </div>
                 </div>
-            </motion.nav>
+            </motion.nav >
 
             {/* Mobile Menu Overlay & Drawer */}
-            <AnimatePresence>
+            < AnimatePresence >
                 {isMobileMenuOpen && (
                     <>
                         <motion.div
@@ -188,8 +181,9 @@ const Navbar = () => {
                             </div>
                         </motion.div>
                     </>
-                )}
-            </AnimatePresence>
+                )
+                }
+            </AnimatePresence >
         </>
     );
 };

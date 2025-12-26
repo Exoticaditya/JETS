@@ -4,7 +4,7 @@ export const productCategories = [
         id: 'online-ups',
         name: 'Online UPS',
         description: 'High-performance online UPS systems for critical power protection',
-        image: 'https://picsum.photos/seed/ups/800/600', // Server Room/UPS
+        image: 'https://jetpower.co.in/product/online-ups.png', // Real Asset
         products: [
             {
                 id: 'ups-1kva',
@@ -52,7 +52,7 @@ export const productCategories = [
         id: 'batteries',
         name: 'Amara Raja Batteries',
         description: 'Premium quality Amara Raja batteries for reliable backup power',
-        image: 'https://picsum.photos/seed/batteries/800/600', // Industrial Battery
+        image: 'https://jetpower.co.in/product/amara-raja-batterie-india.png', // Real Asset
         products: [
             {
                 id: 'amara-150ah',
@@ -78,7 +78,7 @@ export const productCategories = [
         id: 'luminous-inverter',
         name: 'Luminous Inverters',
         description: 'Trusted Luminous inverters for home and commercial use',
-        image: 'https://picsum.photos/seed/inverter/800/600', // Tech/Inverter feel
+        image: 'https://jetpower.co.in/product/inverter.png', // Real Asset
         products: [
             {
                 id: 'lum-900va',
@@ -104,7 +104,7 @@ export const productCategories = [
         id: 'jetpower-batteries',
         name: 'JetPower Batteries',
         description: 'Our own brand of high-quality batteries',
-        image: 'https://picsum.photos/seed/jetbat/800/600', // Generic Battery
+        image: 'https://jetpower.co.in/product/Jet-Power.png', // Real Asset
         products: [
             {
                 id: 'jet-bat-150ah',
@@ -130,7 +130,7 @@ export const productCategories = [
         id: 'isolation-transformer',
         name: 'Isolation Transformers',
         description: 'Electrical isolation for safety and noise reduction',
-        image: 'https://picsum.photos/seed/transformer/800/600', // Electric Transformer
+        image: 'https://jetpower.co.in/product/Jet-Power-Isolation-Transformer.png', // Real Asset
         products: [
             {
                 id: 'iso-3kva',
@@ -154,7 +154,7 @@ export const productCategories = [
         id: 'servo-stabilizer',
         name: 'Servo Stabilizers',
         description: 'Precision voltage stabilization for sensitive equipment',
-        image: 'https://picsum.photos/seed/stabilizer/800/600', // Industrial equipment
+        image: 'https://jetpower.co.in/product/Jet-Power-Servo-Stablizer.png', // Real Asset
         products: [
             {
                 id: 'servo-5kva',
@@ -180,7 +180,7 @@ export const productCategories = [
         id: 'battery-charger',
         name: 'Battery Chargers',
         description: 'Intelligent charging systems for optimal battery life',
-        image: 'https://picsum.photos/seed/charger/800/600', // Charger/Tech
+        image: 'https://jetpower.co.in/product/Jet-Power-Battery-Chargers.png', // Real Asset
         products: [
             {
                 id: 'chg-12v-30a',
@@ -204,7 +204,7 @@ export const productCategories = [
         id: 'solar-energy',
         name: 'Solar Energy Systems',
         description: 'Eco-friendly solar power solutions for sustainable energy',
-        image: 'https://picsum.photos/seed/solar/800/600', // Solar Panels
+        image: 'https://jetpower.co.in/product/solar.png', // Real Asset
         products: [
             {
                 id: 'solar-1kw',
@@ -239,7 +239,7 @@ export const productCategories = [
         id: 'electrical-panel',
         name: 'Electrical Panels',
         description: 'Change Over Panels and AC/DC Power Supply systems',
-        image: 'https://picsum.photos/seed/panel/800/600', // Circuit Breakers
+        image: 'https://jetpower.co.in/product/Electrical-Panel.png', // Real Asset
         products: [
             {
                 id: 'panel-changeover',

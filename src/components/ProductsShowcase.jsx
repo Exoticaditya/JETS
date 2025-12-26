@@ -4,6 +4,14 @@ import SectionContainer from './ui/SectionContainer';
 import ProductCard from './ProductCard';
 import { productCategories, clientLogos } from '../data/products';
 
+// Partner Logos Imports
+import emerson from '../assets/parteners/emersion.jpg';
+import ericsson from '../assets/parteners/ericsson.jpg';
+import ibm from '../assets/parteners/ibm.jpg';
+import idea from '../assets/parteners/idea.jpg';
+import mge from '../assets/parteners/mge.jpg';
+import nokia from '../assets/parteners/nokia.jpg';
+
 const ProductsShowcase = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -16,6 +24,15 @@ const ProductsShowcase = () => {
         { id: 'solar', name: 'Solar Energy' },
         { id: 'stabilizers', name: 'Servo Stabilizers' },
         { id: 'panels', name: 'Electrical Panels' }
+    ];
+
+    const partnerLogos = [
+        { name: 'Emerson', image: emerson },
+        { name: 'Ericsson', image: ericsson },
+        { name: 'IBM', image: ibm },
+        { name: 'Idea', image: idea },
+        { name: 'MGE', image: mge },
+        { name: 'Nokia', image: nokia }
     ];
 
     const filteredCategories = selectedCategory === 'all'
@@ -127,24 +144,21 @@ const ProductsShowcase = () => {
                     <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-brand-dark to-transparent z-10" />
                     <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-dark to-transparent z-10" />
 
+
+
                     {/* Marquee Track */}
                     <div className="flex">
                         {/* First set of logos */}
                         <div className="flex animate-marquee items-center gap-16">
-                            {clientLogos.map((client, index) => (
+                            {partnerLogos.map((client, index) => (
                                 <div
                                     key={`logo-1-${index}`}
-                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 bg-white/5 rounded-lg border border-white/5 p-4 group"
+                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center bg-white rounded-lg border border-white/10 p-4 group hover:scale-110 transition-transform duration-300 shadow-lg"
                                 >
                                     <img
                                         src={client.image}
                                         alt={client.name}
-                                        className="w-full h-full object-contain filter brightness-0 invert group-hover:filter-none transition-all duration-300"
-                                        onError={(e) => {
-                                            e.target.style.display = 'none';
-                                            e.target.parentElement.innerText = client.name;
-                                            e.target.parentElement.classList.add('text-white', 'text-sm', 'font-bold', 'text-center');
-                                        }}
+                                        className="w-full h-full object-contain"
                                     />
                                 </div>
                             ))}
@@ -152,20 +166,15 @@ const ProductsShowcase = () => {
 
                         {/* Duplicate set - Ensure seamless loop */}
                         <div className="flex animate-marquee items-center gap-16" aria-hidden="true">
-                            {clientLogos.map((client, index) => (
+                            {partnerLogos.map((client, index) => (
                                 <div
                                     key={`logo-2-${index}`}
-                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 bg-white/5 rounded-lg border border-white/5 p-4 group"
+                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center bg-white rounded-lg border border-white/10 p-4 group hover:scale-110 transition-transform duration-300 shadow-lg"
                                 >
                                     <img
                                         src={client.image}
                                         alt={client.name}
-                                        className="w-full h-full object-contain filter brightness-0 invert group-hover:filter-none transition-all duration-300"
-                                        onError={(e) => {
-                                            e.target.style.display = 'none';
-                                            e.target.parentElement.innerText = client.name;
-                                            e.target.parentElement.classList.add('text-white', 'text-sm', 'font-bold', 'text-center');
-                                        }}
+                                        className="w-full h-full object-contain"
                                     />
                                 </div>
                             ))}
