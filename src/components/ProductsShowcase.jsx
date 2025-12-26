@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionContainer from './ui/SectionContainer';
 import ProductCard from './ProductCard';
-import { productCategories } from '../data/products';
+import { productCategories, clientLogos } from '../data/products';
 
 const ProductsShowcase = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -23,7 +23,7 @@ const ProductsShowcase = () => {
         : productCategories.filter(cat => cat.id === selectedCategory);
 
     return (
-        <SectionContainer id="products" className="bg-saas-bg relative overflow-hidden">
+        <SectionContainer id="products" className="bg-brand-dark relative overflow-hidden">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none" />
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-radial from-primary-accent/5 to-transparent opacity-50" />
@@ -60,7 +60,7 @@ const ProductsShowcase = () => {
                         key={category.id}
                         onClick={() => setSelectedCategory(category.id)}
                         className={`px-6 py-2 rounded-full transition-all duration-300 font-semibold border backdrop-blur-sm ${selectedCategory === category.id
-                            ? 'bg-gradient-glow text-white border-transparent shadow-saas-glow'
+                            ? 'bg-gradient-glow text-white border-transparent shadow-neon'
                             : 'bg-white/5 text-gray-400 border-white/10 hover:border-primary-accent hover:text-white hover:bg-white/10'
                             }`}
                     >
@@ -122,31 +122,29 @@ const ProductsShowcase = () => {
                 </h3>
 
                 {/* Marquee Container */}
-                <div className="relative overflow-hidden py-8 bg-saas-surface border border-white/5 shadow-saas-card rounded-2xl mx-4">
+                <div className="relative overflow-hidden py-8 bg-surface-dark border border-white/5 shadow-glass rounded-2xl mx-4">
                     {/* Gradient Overlays */}
-                    <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-saas-surface to-transparent z-10" />
-                    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-saas-surface to-transparent z-10" />
+                    <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-brand-dark to-transparent z-10" />
+                    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-dark to-transparent z-10" />
 
                     {/* Marquee Track */}
                     <div className="flex">
                         {/* First set of logos */}
                         <div className="flex animate-marquee items-center gap-16">
-                            {[
-                                { name: 'Emerson', image: '/assets/emersion.jpg' },
-                                { name: 'Ericsson', image: '/assets/ericsson.jpg' },
-                                { name: 'IBM', image: '/assets/ibm.jpg' },
-                                { name: 'Idea', image: '/assets/idea.jpg' },
-                                { name: 'MGE', image: '/assets/mge.jpg' },
-                                { name: 'Nokia', image: '/assets/nokia.jpg' }
-                            ].map((client, index) => (
+                            {clientLogos.map((client, index) => (
                                 <div
                                     key={`logo-1-${index}`}
-                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 bg-white/5 rounded-lg border border-white/5 p-4"
+                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 bg-white/5 rounded-lg border border-white/5 p-4 group"
                                 >
                                     <img
                                         src={client.image}
                                         alt={client.name}
-                                        className="w-full h-full object-contain mix-blend-screen"
+                                        className="w-full h-full object-contain filter brightness-0 invert group-hover:filter-none transition-all duration-300"
+                                        onError={(e) => {
+                                            e.target.style.display = 'none';
+                                            e.target.parentElement.innerText = client.name;
+                                            e.target.parentElement.classList.add('text-white', 'text-sm', 'font-bold', 'text-center');
+                                        }}
                                     />
                                 </div>
                             ))}
@@ -154,22 +152,20 @@ const ProductsShowcase = () => {
 
                         {/* Duplicate set - Ensure seamless loop */}
                         <div className="flex animate-marquee items-center gap-16" aria-hidden="true">
-                            {[
-                                { name: 'Emerson', image: '/assets/emersion.jpg' },
-                                { name: 'Ericsson', image: '/assets/ericsson.jpg' },
-                                { name: 'IBM', image: '/assets/ibm.jpg' },
-                                { name: 'Idea', image: '/assets/idea.jpg' },
-                                { name: 'MGE', image: '/assets/mge.jpg' },
-                                { name: 'Nokia', image: '/assets/nokia.jpg' }
-                            ].map((client, index) => (
+                            {clientLogos.map((client, index) => (
                                 <div
                                     key={`logo-2-${index}`}
-                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 bg-white/5 rounded-lg border border-white/5 p-4"
+                                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 bg-white/5 rounded-lg border border-white/5 p-4 group"
                                 >
                                     <img
                                         src={client.image}
                                         alt={client.name}
-                                        className="w-full h-full object-contain mix-blend-screen"
+                                        className="w-full h-full object-contain filter brightness-0 invert group-hover:filter-none transition-all duration-300"
+                                        onError={(e) => {
+                                            e.target.style.display = 'none';
+                                            e.target.parentElement.innerText = client.name;
+                                            e.target.parentElement.classList.add('text-white', 'text-sm', 'font-bold', 'text-center');
+                                        }}
                                     />
                                 </div>
                             ))}

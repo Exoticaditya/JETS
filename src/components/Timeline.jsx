@@ -119,7 +119,7 @@ const Timeline = () => {
                     {companyInfo.values && companyInfo.values.map((value, index) => (
                         <motion.span
                             key={index}
-                            className="px-6 py-2 rounded-full bg-surface-dark shadow-md border border-white/5 text-gray-300 font-medium hover:bg-brand-primary hover:text-white hover:shadow-neon transition-all cursor-default"
+                            className="px-6 py-2 rounded-full bg-surface-dark shadow-glass border border-white/5 text-gray-300 font-medium hover:bg-brand-primary hover:text-white hover:shadow-neon transition-all cursor-default"
                             whileHover={{ scale: 1.05 }}
                         >
                             {value}
