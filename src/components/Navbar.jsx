@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, PhoneCall } from 'lucide-react';
+import { Menu, X, PhoneCall, ChevronRight, Zap } from 'lucide-react';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,6 @@ const Navbar = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
 
-            // Update active section based on scroll position
             const sections = navLinks.map(link => document.getElementById(link.id));
             const scrollPosition = window.scrollY + 100;
 
@@ -58,8 +57,8 @@ const Navbar = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-saas-bg/80 backdrop-blur-xl shadow-lg border-b border-white/5'
-                    : 'bg-transparent'
+                    ? 'bg-brand-dark/80 backdrop-blur-xl border-b border-white/5 shadow-glass'
+                    : 'bg-transparent py-4'
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
@@ -69,15 +68,19 @@ const Navbar = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => scrollToSection('home')}
-                            className="flex items-center gap-3 p-2 group"
+                            className="flex items-center gap-2 group relative"
                         >
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <img
-                                    src="/assets/logo1.png"
-                                    alt="JetPower"
-                                    className="h-8 md:h-10 brightness-0 invert relative z-10"
-                                />
+                            <div className="absolute inset-0 bg-brand-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="relative z-10 flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary shadow-lg">
+                                <Zap className="w-6 h-6 text-white fill-current" />
+                            </div>
+                            <div className="flex flex-col items-start relative z-10">
+                                <span className="text-xl font-display font-bold text-white tracking-tight leading-none">
+                                    JET<span className="text-brand-accent">POWER</span>
+                                </span>
+                                <span className="text-[0.6rem] text-text-muted uppercase tracking-[0.2em] leading-none mt-1">
+                                    Future Energy
+                                </span>
                             </div>
                         </motion.button>
 
@@ -89,21 +92,21 @@ const Navbar = () => {
                                     onClick={() => scrollToSection(link.id)}
                                     className={`relative text-sm font-semibold tracking-wide transition-colors font-display uppercase ${activeSection === link.id
                                         ? 'text-white'
-                                        : 'text-gray-400 hover:text-white'
+                                        : 'text-text-secondary hover:text-white'
                                         }`}
                                 >
                                     {link.label}
                                     {activeSection === link.id && (
                                         <motion.div
                                             layoutId="activeNav"
-                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-glow shadow-[0_0_8px_rgba(14,165,233,0.5)]"
+                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-glow shadow-neon"
                                         />
                                     )}
                                 </button>
                             ))}
                             <a
                                 href="tel:+918287175272"
-                                className="px-6 py-2.5 rounded-lg btn-saas-primary text-white font-bold shadow-lg flex items-center gap-2 text-sm uppercase tracking-wider group"
+                                className="btn-primary flex items-center gap-2 text-sm uppercase tracking-wider group"
                             >
                                 <PhoneCall size={16} className="group-hover:rotate-12 transition-transform" />
                                 Get Quote
@@ -112,13 +115,13 @@ const Navbar = () => {
 
                         {/* Mobile Menu Button */}
                         <button
-                            className="md:hidden p-2 text-white hover:bg-white/5 rounded-lg transition-colors z-[60]"
+                            className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors z-[60]"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
                             {isMobileMenuOpen ? (
-                                <X className="w-7 h-7" />
+                                <X className="w-8 h-8 text-brand-accent transform rotate-0 hover:rotate-90 transition-transform" />
                             ) : (
-                                <Menu className="w-7 h-7" />
+                                <Menu className="w-8 h-8" />
                             )}
                         </button>
                     </div>
@@ -129,31 +132,26 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 bg-black/80 z-40 md:hidden backdrop-blur-sm"
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
                             onClick={() => setIsMobileMenuOpen(false)}
                         />
 
-                        {/* Drawer */}
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed inset-y-0 right-0 w-[80%] max-w-sm bg-saas-surface border-l border-white/10 z-50 md:hidden shadow-2xl flex flex-col"
+                            className="fixed inset-y-0 right-0 w-[85%] max-w-sm bg-brand-dark/95 backdrop-blur-xl border-l border-white/10 z-50 md:hidden shadow-2xl flex flex-col"
                         >
-                            <div className="p-6 border-b border-white/5 flex justify-between items-center bg-saas-bg/50">
-                                <span className="text-xl font-display font-bold text-white tracking-wide">MENU</span>
-                                {/* Close button is handled by the toggle in navbar z-Index, but usually good to have one inside in case navbar is covered. 
-                                    However, since navbar is z-50 and drawer is z-50, let's keep the standard toggle. 
-                                */}
+                            <div className="p-8 border-b border-white/5 bg-gradient-to-r from-brand-dark to-brand-dark/50">
+                                <span className="text-2xl font-display font-bold text-white tracking-wide text-gradient">MENU</span>
                             </div>
 
-                            <div className="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6">
+                            <div className="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-4">
                                 {navLinks.map((link, index) => (
                                     <motion.button
                                         key={link.id}
@@ -161,23 +159,28 @@ const Navbar = () => {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                         onClick={() => scrollToSection(link.id)}
-                                        className={`text-left text-lg font-medium transition-all py-3 px-4 rounded-xl border border-transparent ${activeSection === link.id
-                                            ? 'bg-white/5 text-primary-accent border-white/5 shadow-inner'
-                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
-                                            } font-display uppercase tracking-wide`}
+                                        className={`group relative text-left text-lg font-medium transition-all py-4 px-6 rounded-xl border ${activeSection === link.id
+                                            ? 'bg-white/5 text-brand-accent border-brand-accent/30 shadow-[inset_0_0_20px_rgba(6,182,212,0.1)]'
+                                            : 'border-transparent text-text-secondary hover:text-white hover:bg-white/5'
+                                            } font-display uppercase tracking-wide overflow-hidden`}
                                     >
-                                        <div className="flex items-center justify-between">
+                                        <div className="relative z-10 flex items-center justify-between">
                                             {link.label}
-                                            {activeSection === link.id && <div className="w-1.5 h-1.5 rounded-full bg-primary-accent" />}
+                                            {activeSection === link.id ? (
+                                                <ChevronRight className="w-5 h-5 text-brand-accent" />
+                                            ) : (
+                                                <ChevronRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                                            )}
                                         </div>
                                     </motion.button>
                                 ))}
                             </div>
 
-                            <div className="p-6 border-t border-white/5 bg-saas-bg/50">
+                            <div className="p-8 border-t border-white/5 bg-brand-dark relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-glow opacity-5" />
                                 <a
                                     href="tel:+918287175272"
-                                    className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl btn-saas-primary text-white font-bold shadow-saas-glow active:scale-95 transition-all text-sm uppercase tracking-wider"
+                                    className="relative w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-primary text-white font-bold shadow-neon active:scale-95 transition-all text-sm uppercase tracking-wider hover:bg-brand-secondary"
                                 >
                                     <PhoneCall size={18} />
                                     <span>Call Now</span>

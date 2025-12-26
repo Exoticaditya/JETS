@@ -4,7 +4,7 @@ export const productCategories = [
         id: 'online-ups',
         name: 'Online UPS',
         description: 'High-performance online UPS systems for critical power protection',
-        image: '/assets/online-ups.png',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010dba0d7e?auto=format&fit=crop&q=80&w=1000', // Server Room/UPS
         products: [
             {
                 id: 'ups-1kva',
@@ -52,7 +52,7 @@ export const productCategories = [
         id: 'batteries',
         name: 'Amara Raja Batteries',
         description: 'Premium quality Amara Raja batteries for reliable backup power',
-        image: '/assets/amara-raja-batterie-india.png',
+        image: 'https://images.unsplash.com/photo-1621255557769-cf2be79eb538?auto=format&fit=crop&q=80&w=1000', // Industrial Battery
         products: [
             {
                 id: 'amara-150ah',
@@ -78,7 +78,7 @@ export const productCategories = [
         id: 'luminous-inverter',
         name: 'Luminous Inverters',
         description: 'Trusted Luminous inverters for home and commercial use',
-        image: '/assets/inverter.png',
+        image: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b0?auto=format&fit=crop&q=80&w=1000', // Tech/Inverter feel
         products: [
             {
                 id: 'lum-900va',
@@ -104,7 +104,7 @@ export const productCategories = [
         id: 'jetpower-batteries',
         name: 'JetPower Batteries',
         description: 'Our own brand of high-quality batteries',
-        image: '/assets/Jet-Power.png',
+        image: 'https://images.unsplash.com/photo-1605335830953-b45b2b2b2d07?auto=format&fit=crop&q=80&w=1000', // Generic Battery
         products: [
             {
                 id: 'jet-bat-150ah',
@@ -130,7 +130,7 @@ export const productCategories = [
         id: 'isolation-transformer',
         name: 'Isolation Transformers',
         description: 'Electrical isolation for safety and noise reduction',
-        image: '/assets/Jet-Power-Isolation-Transformer.png',
+        image: 'https://images.unsplash.com/photo-1563200923-d309223e74c0?auto=format&fit=crop&q=80&w=1000', // Electric Transformer
         products: [
             {
                 id: 'iso-3kva',
@@ -154,7 +154,7 @@ export const productCategories = [
         id: 'servo-stabilizer',
         name: 'Servo Stabilizers',
         description: 'Precision voltage stabilization for sensitive equipment',
-        image: '/assets/Jet-Power-Servo-Stablizer.png',
+        image: 'https://images.unsplash.com/photo-1581093588402-4857474dac09?auto=format&fit=crop&q=80&w=1000', // Industrial equipment
         products: [
             {
                 id: 'servo-5kva',
@@ -180,7 +180,7 @@ export const productCategories = [
         id: 'battery-charger',
         name: 'Battery Chargers',
         description: 'Intelligent charging systems for optimal battery life',
-        image: '/assets/Jet-Power-Battery-Chargers.png',
+        image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000', // Charger/Tech
         products: [
             {
                 id: 'chg-12v-30a',
@@ -204,7 +204,7 @@ export const productCategories = [
         id: 'solar-energy',
         name: 'Solar Energy Systems',
         description: 'Eco-friendly solar power solutions for sustainable energy',
-        image: '/assets/solar.png',
+        image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1000', // Solar Panels
         products: [
             {
                 id: 'solar-1kw',
@@ -239,7 +239,7 @@ export const productCategories = [
         id: 'electrical-panel',
         name: 'Electrical Panels',
         description: 'Change Over Panels and AC/DC Power Supply systems',
-        image: '/assets/Electrical-Panel.png',
+        image: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=1000', // Circuit Breakers
         products: [
             {
                 id: 'panel-changeover',
@@ -261,13 +261,13 @@ export const productCategories = [
 
 // Client/Partner logos
 export const clientLogos = [
-    { name: 'Amara Raja', image: '/assets/amara-raja-batterie-india.png' },
-    { name: 'Emerson', image: '/assets/emersion.jpg' },
-    { name: 'Ericsson', image: '/assets/ericsson.jpg' },
-    { name: 'IBM', image: '/assets/ibm.jpg' },
-    { name: 'Idea', image: '/assets/idea.jpg' },
-    { name: 'MGE', image: '/assets/mge.jpg' },
-    { name: 'Nokia', image: '/assets/nokia.jpg' }
+    { name: 'Amara Raja', image: 'https://logo.clearbit.com/amararajabatteries.com' },
+    { name: 'Emerson', image: 'https://logo.clearbit.com/emerson.com' },
+    { name: 'Ericsson', image: 'https://logo.clearbit.com/ericsson.com' },
+    { name: 'IBM', image: 'https://logo.clearbit.com/ibm.com' },
+    { name: 'Idea', image: 'https://logo.clearbit.com/ideacellular.com' },
+    { name: 'MGE', image: 'https://logo.clearbit.com/mgeups.com' },
+    { name: 'Nokia', image: 'https://logo.clearbit.com/nokia.com' }
 ];
 
 // Services offered
