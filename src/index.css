@@ -29,7 +29,7 @@
   }
 
   .glass-card {
-    @apply relative overflow-hidden rounded-xl backdrop-blur-md bg-gradient-card border border-white/5 transition-all duration-300 hover:border-brand-primary/50 hover:shadow-neon group;
+    @apply relative overflow-hidden rounded-xl backdrop-blur-md bg-gradient-card border border-white/5 transition-all duration-300 hover:border-brand-primary/50 hover:shadow-neon;
   }
 
   .text-gradient {
